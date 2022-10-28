@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #fff;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        position: relative;
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      .swiper-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper {
+        width: 240px;
+        height: 320px;
+      }
+
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #fff;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 2px solid #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="swiper-card">
+        <h1 id="h1"></h1>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" style="background-image: url(1.jpg);"></div>
+              <div class="swiper-slide" style="background-image: url(2.jpg);"></div>
+              <div class="swiper-slide" style="background-image: url(3.jpg);"></div>
+              <div class="swiper-slide" style="background-image: url(4.jpg);"></div>
+              <div class="swiper-slide" style="background-image: url(5.jpg);"></div>
+              <div class="swiper-slide" style="background-image: url(6.jpg);"></div>
+              <div class="swiper-slide" style="background-image: url(7.jpg);"></div>
+            </div>
+          </div>
+    </div>
+    
+    <!-- Swiper -->
+
+    
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        const h1 = document.getElementById('h1')
+        const swiperCards = document.getElementsByClassName('swiper')[0]
+
+        const slideDescription = [
+            'Тукан',
+            'Тигр',
+            'Волк',
+            'Коала',
+            'Зебра',
+            'Дабать',
+            'Гиппопотам',
+        ]
+
+        const swiper = new Swiper(swiperCards , {
+            effect: "cards",
+            cardsEffect: {
+                perSlideOffset: 30,
+                perSlideRotate: 20
+            },
+            grabCursor: true,
+            autoplay: {
+                delay: 300,
+                //pauseOnMouseEnter: true,
+                reverseDirection: false
+            },
+            mousewheel: true,
+            on: {
+                init: function () {
+                    h1.innerHTML = slideDescription[0] 
+                },
+                activeIndexChange: function (e) {
+                    h1.innerHTML = slideDescription[e.activeIndex]
+                },
+                slideChange: function () {
+                    
+                },
+                reachBeginning: function () {
+                    this.params.autoplay.reverseDirection = false
+                },
+                reachEnd: function (e) {
+                    this.params.autoplay.reverseDirection = true
+                }
+            }
+        });
+
+        swiperCards.addEventListener('mouseenter', function(e){
+            swiper.autoplay.stop()
+        })
+        swiperCards.addEventListener('mouseleave', function(e){
+            swiper.autoplay.start()
+        })
+    </script>
+  </body>
+</html>
