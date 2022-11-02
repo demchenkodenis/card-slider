@@ -4,5 +4,7 @@
 ---
 >добавление поля в админке - https://habr.com/ru/post/533608/
 ---
->магазин белья на opencart www.juria.ru/byustgaltery/
+>магазин белья www.juria.ru/byustgaltery/
+---
+>магазин одежды https://mishukova.ru/
 ---
