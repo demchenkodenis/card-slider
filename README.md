@@ -2,7 +2,7 @@
 ## полезные сайты 
 >сайт ателье http://tomilana.gmall.io/info/kak-pravilno-sdelat-zamery-dlya-poshiva
 ---
->добавление поля в админке - https://habr.com/ru/post/533608/
+>дизайн - https://www.behance.net/gallery/111417229/E-Commerce-santehnika
 ---
 >магазин белья www.juria.ru/byustgaltery/
 ---
